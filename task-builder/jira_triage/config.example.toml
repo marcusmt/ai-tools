@@ -1,0 +1,25 @@
+[jira]
+url = "https://your-org.atlassian.net"
+user = "you@example.com"
+token = "your-jira-token-here"
+
+[llm]
+# Global defaults applied to all stages unless overridden below.
+command = "gemini"
+model = "gemini-2.5-pro"
+env = { GOOGLE_CLOUD_PROJECT = "your-gcp-project" }
+
+[llm.analyze]
+# Optional. Inherits from [llm], overrides any field.
+# Example: use a cheaper model for the simpler triage stage.
+# model = "gemini-2.5-flash"
+
+[llm.investigate]
+# Optional. Same inheritance rules.
+
+[llm.plan]
+# Optional. Same inheritance rules.
+# Example: use Claude when licensed:
+# command = "claude"
+# model = "claude-sonnet-4-5"
+# env = {}
